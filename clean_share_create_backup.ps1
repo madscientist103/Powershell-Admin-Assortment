@@ -1,4 +1,4 @@
-﻿#delete items older than 90 days but leave "test" programs alone, repalce test with anything #you want to leave in perpetuity
+﻿#delete items older than 90 days but leave "test" programs alone, replace test with anything #you want to leave in perpetuity
 Get-ChildItem –Path "\\path\to\your\share" -Recurse | 
 Where-Object {($_.LastWriteTime -lt (Get-Date).AddDays(-90))} |
 Where {$_ -notlike 'Test*'} |
